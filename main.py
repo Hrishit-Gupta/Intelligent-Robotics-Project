@@ -100,7 +100,7 @@ s_desired, depths_desired = project_points(points_3d, t_desired, R_desired)
 print("DESIRED POSE:")
 print(f"  Camera at: {t_desired}")
 print(f"  Target depths: {depths_desired}")
-print(f"  All positive: {np.all(depths_desired > 0)} ✓" if np.all(depths_desired > 0) else "  ERROR: negative depths")
+print(f"  All positive: {np.all(depths_desired > 0)} " if np.all(depths_desired > 0) else "  ERROR: negative depths")
 print()
 
 # Verify initial pose
@@ -108,7 +108,7 @@ s_initial, depths_initial = project_points(points_3d, t_initial, R_initial)
 print("INITIAL POSE:")
 print(f"  Camera at: {t_initial}")
 print(f"  Target depths: {depths_initial}")
-print(f"  All positive: {np.all(depths_initial > 0)} ✓" if np.all(depths_initial > 0) else "  ERROR: negative depths")
+print(f"  All positive: {np.all(depths_initial > 0)} " if np.all(depths_initial > 0) else "  ERROR: negative depths")
 print(f"  Displacement from desired: {np.linalg.norm(t_initial - t_desired)*100:.2f} cm")
 print("="*70)
 
@@ -172,7 +172,7 @@ for iteration in range(max_iterations):
     
     # Check convergence
     if error_norm < threshold:
-        print(f"\n✓ CONVERGED at iteration {iteration}")
+        print(f"\n CONVERGED at iteration {iteration}")
         print(f"  Final error: {error_norm:.2e}")
         converged = True
         break
