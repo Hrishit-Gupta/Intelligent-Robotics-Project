@@ -337,9 +337,5 @@ print(f"Convergence status: {'SUCCESS' if converged else 'PARTIAL'}")
 print("="*70)
 
 if converged:
-    print("\nPERFECT CONVERGENCE ACHIEVED:")
-    print("  - Exponential error decrease")
-    print("  - Smooth image trajectories")
-    print("  - Velocities converge to zero")
-    print("  - Camera reaches desired pose")
-    print("\nThis correctly reproduces Figure 4 from the paper!")
+    print("\nSimulation is converged properly")
+    
